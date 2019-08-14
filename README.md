@@ -4,7 +4,7 @@
 # Rails-pangu
 [中文文档 Chinese document](/README.CN.md)
 
-`Rails-pangu` is a **Rails 6(API Only)** boilerplate which follows cutting-edge solutions already adopted by the industry, notablly, [Devise](https://github.com/plataformatec/devise), [JWT(JSON Web Tokens)](https://jwt.io/), Postgres, Redis, Docker, Rspec, RuboCop, [CircleCI](https://circleci.com/). It is a solid production-ready starting point for your new backend projects.
+`Rails-pangu` is a **Rails 6(API Only)** boilerplate which follows cutting-edge solutions already adopted by the industry, notablly, [Devise](https://github.com/plataformatec/devise), [JWT(JSON Web Tokens)](https://jwt.io/), Postgres, Redis, Docker, Rspec, RuboCop, [CircleCI](https://circleci.com/) and so on. It is a solid production-ready starting point for your new backend projects.
 
 **Mixing all these solutions and letting them work perfectly is not easy. Here is an example**:
 
@@ -18,24 +18,24 @@ Thanks to lots of the close solutions that gave hints to this `Rails-pangu`, for
 
 - Buggy
 
-- Lots of legacy code that are not usable for current version of frameworks, gems
+- Lots of legacy code that are not usable for current version of frameworks and gems
 
-At the same time, we saw couple of other repos doing the same work, but one big issue for these repos is that they are started with **Rails <= 5.0**, which is far different from **Rails 6**, and that contributes to the final decision to "reinvent the wheel again".
+At the same time, we saw couple of other repos doing the same work, but one big issue for these repos is that they are started with **Rails <= 5.0**, which is far different from **Rails 6**, and contributes to the final decision to "reinvent the wheel again".
 
 <img src="https://res.paiyou.co/pangu.jpg" width="300" align="middle" />
 
-> Pangu is the creator of all in Chinese mythology. In the stories, Pangu created the Earth and the Sky with a swing of his giant axe and kept them seperated by standing between them.
+> Pangu opened up the whole new world in Chinese mythology. In the myth, Pangu created the Earth and the Sky with a swing of his giant axe and kept them seperated by standing between them.
 > Just like pangu, `Rails-pangu` aims at being a foundational code base which eliminates those tedious research and experimental work for your new Rails projects.
 
 ## Features
 
 #### 🚀 Rails 6
 
-As explained above, `rails 6` is the future and is far different from `rails 5`.
+As explained above, quite different from `rails 5`,`rails 6` is adapted to the future trend.
 
 #### 🚀 Rails API only
 
-It is common to use frontend js libraries like `react`, `vuejs` to replace `rails view` in modern web development
+It is common to use frontend js libraries like `react`and`vuejs` to replace `rails view` in modern web development.
 
 #### 🚀 [Devise](https://github.com/plataformatec/devise)
 
@@ -52,7 +52,7 @@ To our best of knowledge, `devise` provides a full, industry-standard, easy-to-i
 
 #### 🚀 JWT
 
-JSON Web Tokens
+JSON Web Tokens is the currently well-received solution that is cross-field certified. 
 
 #### 🚀 [devise-jwt](https://github.com/waiting-for-dev/devise-jwt)
 
