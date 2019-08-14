@@ -39,16 +39,16 @@ It is common to use frontend js libraries like `react`and`vuejs` to replace `rai
 
 #### 🚀 [Devise](https://github.com/plataformatec/devise)
 
-Quoted from it's homepage:
+Quoted from its homepage:
 
-> Devise is a flexible authentication solution for Rails based on Warden. It:
+>Based on Warden, Devise is a flexible authentication solution for Rails. It:
 >
 > - Is Rack based;
 > - Is a complete MVC solution based on Rails engines;
 > - Allows you to have multiple models signed in at the same time;
 > - Is based on a modularity concept: use only what you really need.
 
-To our best of knowledge, `devise` provides a full, industry-standard, easy-to-ingrate way of all kinds of authentication. Damn, it's awesome!
+To our best of knowledge, `devise` provides a full, industry-standard,and easy-to-ingrate way of all kinds of authentication. Damn, it's awesome!
 
 #### 🚀 JWT
 
@@ -56,40 +56,40 @@ JSON Web Tokens is the currently well-received solution that is cross-field cert
 
 #### 🚀 [devise-jwt](https://github.com/waiting-for-dev/devise-jwt)
 
-While there are lots of solutions which hook `devise` and `jwt` together, this repo is better implemented from our point of view.
+While there are lots of solutions which link `devise` to `jwt`, this repo is better implemented from our point of view.
 
-We implmented a devise-jwt blacklist policy leveraging the power of `redis` in [app/models/jwt_blacklist.rb](https://github.com/paiyou-network/rails-devise-jwt/blob/master/app/models/jwt_blacklist.rb).
+We implemented a devise-jwt blacklist policy leveraging the power of `redis` in [app/models/jwt_blacklist.rb](https://github.com/paiyou-network/rails-devise-jwt/blob/master/app/models/jwt_blacklist.rb).
 
 #### 🚀 Postgres
-We use postgres as default database store cause sqlite3 will be replaced sooner or later when the traffic of one web server becomes lager enough
+We use postgres as default database. Sqlite3 will die out sooner or later when there exists  traffic congestion in one web server.
 
 #### 🚀 Rspec
-Behaviour Driven Development for Ruby. Making TDD Productive and Fun.
+Ruby's behavior-driven testing framework makes TDD productive and interesting.
 
 #### 🚀 RuboCop
 A Ruby static code analyzer and formatter, based on the community Ruby style guide. https://docs.rubocop.org
 
 #### 🚀 [CircleCI](https://circleci.com/)
-CircleCI is the leading continuous integration and delivery platform for teams looking to shorten the distance between idea and delivery
+CircleCI is the leading continuous integration and delivery platform for teams looking to shorten the distance between idea and delivery.
 In this project, we leverage CircleCI to test `Rails-pangu`'s code base with both `rspec` and `RuboCop`
 
 #### 🚀 [Factory Bot](https://github.com/thoughtbot/factory_bothttps://github.com/thoughtbot/factory_bot)
-A library for setting up Ruby objects as test data.
+A library for setting up Ruby objects as test data
 
 #### 🚀 Docker
 
-Docker is a standard containerize solution which is almost used in every team worldwide. As a result, a `Dockerfile` and related scripts are provided to help generate a docker image for this project.
+Docker is a standard containerize solution which is almost employed in every team worldwide. As a result, a `Dockerfile` and related scripts are provided to help generate a docker image for this project.
 
 The provided docker building solution contains the following optimizations: 
 
 * Docker building acceleration
 
-  When a project grows, hundreds or even thousands of different versions of different gems will be tried or used. Even a small change in `Gemfile` causes re-bundling for every `Gem` while building a `Ruby` based docker image, that most of the docker image building time is wasted for bundling a large number of stable gems, such as `rails`, `pg`... To solve this issue, we utilized a trick which accelerates the docker building process by bundling two rounds for `Gemfile` files, and generates two layers of docker image: 
+  When a project grows, hundreds or even thousands of versions of different gems will be tried or used. Even a small change in `Gemfile` can cause re-bundling for every `Gem` while building a `Ruby` based docker image, in which case, most of the docker image building time is wasted for bundling a large number of stable gems, such as `rails`, `pg`... To solve this issue, we utilized a trick which accelerates the docker building process by bundling two rounds for `Gemfile` files, and generates two layers of docker image: 
 
-  * Build the first layer for `Gemfile.core`, which is for stable or core `Gem`s, such as `rails`, `pg`.
-  * Build the second layer for `Gemfile`,  which is for mutable or non-core `Gem`s, for example, `Gem`s wrote or forted by yourself. Inside `Rails-pangu`, we demonstrate an example by putting `mailgun` gem inside `Gemfile`. 
+  * Build the first layer for `Gemfile.core`, which is for stability or core `Gem`s, such as `rails`, `pg`.
+  * Build the second layer for `Gemfile`,  which is for variability or non-core `Gem`s. For example, `Gem`is written or forked by yourself. Inside `Rails-pangu`, we demonstrate an example by putting `mailgun` gem inside `Gemfile`. 
 
-  Though, this process generates extra one layer of docker image which makes the image lager a little bit(hundreds of `KB`s). It worths that way cause **time is much more limited than disk space**
+  Though, this process generates extra one layer of docker image which makes the image lager a little bit(hundreds of `KB`s). It makes sense due to the fact that in this way **time is much more limited than disk space**
 
   The following lines of `Dockerfile` demonstrates this docker building process: 
 
@@ -113,7 +113,7 @@ RUN bundle install --gemfile Gemfile -j16 --binstubs=$BUNDLE_PATH/bin
 
 #### 🚀 Docker Compose
 
-A `docker-compose.yml` is attached to help stick postgres and web server together quickly.
+A `docker-compose.yml` is attached to helping quickly stick postgres and web server together.
 
 #### 🚀 [Puma](https://github.com/puma/puma)
 
@@ -139,7 +139,7 @@ Run `bin/build.sh` to build the docker image `rails-devise-jwt`.
 
 #### Run
 
-After built the image, run: `docker-compose up -d`
+After building the image, please run: `docker-compose up -d`
 
 Then, initialize the database with `docker-compose exec server rails db:create`
 
