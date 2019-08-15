@@ -121,7 +121,7 @@ Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby
 
 #### 🚀 Redis
 
-Is there any web project isn't using `redis` as a faster and sometimes easier way of storing data? Well, if there isn't,  just replace it!
+Is there any web project not using `redis` as a faster and sometimes easier way of storing data? Well, if there is,  just replace it!
 
 #### 🚀 Mailgun
 
@@ -169,7 +169,7 @@ We allow CORS and expose the Authorization header by default. If you want to dis
 
 ## Add script to cron job
 
-You can add cron job in `bin/gen_cronjobs.rb`, an example is as follows.
+You can add cron job in `bin/gen_cronjobs.rb`. An example is as follows.
 
 ```ruby
 puts [
@@ -181,7 +181,7 @@ puts [
 }.join("\n")
 ```
 
-If you want to run bash script, you can replace `cd /usr/src/app; rails runner \"Util.run_once('#{cmd}')\"` to your custom cmd.
+If you want to run bash script, you can replace `cd /usr/src/app; rails runner \"Util.run_once('#{cmd}')\"` as your custom cmd.
 
 
 
@@ -193,7 +193,7 @@ In addition to the default role we provide, we also allow developers to create t
 
 #### Default blacklist with redis
 
-Redis is a good option for `blacklist` that will allow fast in memory access to the list. In `jwt_blacklist` record, we implement blacklist with redis. By setting `redis` expiration time to be the same as `jwt token` expiration time, this token can be automatically deleted from redis when the token expires.
+The capability of redis to get access to memory bank is so strong that it is a pleasant choice to fulfill `blacklist`. In `jwt_blacklist` record, we implement blacklist with redis. By setting `redis` expiration time equal to `jwt token`'s, this token can be automatically deleted from redis when the token expires.
 
 ```ruby
   def self.jwt_revoked?(payload, user)
@@ -224,7 +224,7 @@ You can also implement blacklist by your own strategies. You just need to rewrit
 
 #### Dispatch requests
 
-You can config `dispatch_requests` in `devise.rb`. When config it, you need to tell which requests will dispatch tokens for the user that has been previously authenticated (usually through some other warden strategy, such as one requiring username and email parameters). To configure it, you can add the the request path to dispath_requests.
+You can config `dispatch_requests` in `devise.rb`. When config it, you need to tell which requests will dispatch tokens for the user that has been previously authenticated (usually through some other warden strategy, such as one requiring username and email parameters). To configure it, the request path should be added to `dispatch_requests`.
 
 ```ruby
   jwt.dispatch_requests = [['POST', %r{^users/sign_in$}]]
@@ -233,7 +233,7 @@ You can config `dispatch_requests` in `devise.rb`. When config it, you need to t
 
 #### Revocation requests
 
-You can config `dispatch_requests` in `devise.rb`. When config it, you need to tell which requests will revoke incoming JWT tokens, and you can add the the request path to revocation_requests
+You can config `dispatch_requests` in `devise.rb`. When configing it, you need to add the request path to revocation_requests, and then tell which requests will revoke incoming JWT tokens.
 
 ```ruby
   jwt.revocation_requests = [['DELETE', %r{^users/sign_out$}]]
@@ -251,8 +251,7 @@ You can config `dispatch_requests` in `devise.rb`. When config it, you need to t
 
 #### Jwt dispatch
 
-You can add a hook method `on_jwt_dispatch` on the `user` record. It will execute when a token dispatched for that user instance, and it takes token and payload as parameters. And this method will call when
-you access the routes which in dispatch_requests
+You can add a hook method `on_jwt_dispatch` on the `user` record. It will execute when a token dispatching for that user instance, and it takes token and payload as parameters. This method will call when you access the routes which are in dispatch_requests.
 
 ```ruby
   def on_jwt_dispatch(token, payload)
@@ -264,7 +263,7 @@ you access the routes which in dispatch_requests
 
 #### Configure mailgun environment
 
-Before using mailgun, you should register a mailgun account on [Mailgun Official website](https://www.mailgun.com/) . After this is done, you only need to add these environment config in docker-compose.yml.
+Before using mailgun, you should register a mailgun account on [Mailgun Official website](https://www.mailgun.com/). Having it done, you only need to add these environment config in docker-compose.yml.
 
 ```yml
 MAILGUN_EMAIL_FROM: [send_template_from_name]
